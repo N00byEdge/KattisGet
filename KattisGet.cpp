@@ -141,15 +141,7 @@ void getSampleData ( ) {
 
 	string url;
 
-	if ( subkattis != "open" ) {
-
-		ss
-		<< "https://"
-		<< subkattis
-		<< ".kattis.com/download/sampledata?id="
-		<< id;
-
-	} else {
+	if ( subkattis != "po" ) {
 
 		ss
 		<< "https://"
@@ -157,6 +149,14 @@ void getSampleData ( ) {
 		<< ".kattis.com/problems/"
 		<< id
 		<< "/file/statement/samples.zip";
+
+	} else {
+
+		ss
+		<< "https://"
+		<< subkattis
+		<< ".kattis.com/download/sampledata?id="
+		<< id;
 
 	}
 
@@ -522,7 +522,7 @@ void copyTemplates ( ) {
 	#else
 
 	ss
-	<< "cp "
+	<< "cp -i "
 	<< kattisDir
 	<< pathSeparator
 	<< "template"
@@ -555,7 +555,7 @@ void copyTemplates ( ) {
 	#else
 
 	ss
-	<< "cp "
+	<< "cp -i "
 	<< kattisDir
 	<< pathSeparator
 	<< "template.cpp "
