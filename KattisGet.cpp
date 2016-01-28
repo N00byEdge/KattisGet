@@ -141,24 +141,12 @@ void getSampleData ( ) {
 
 	string url;
 
-	if ( subkattis != "po" ) {
-
-		ss
-		<< "https://"
-		<< subkattis
-		<< ".kattis.com/problems/"
-		<< id
-		<< "/file/statement/samples.zip";
-
-	} else {
-
-		ss
-		<< "https://"
-		<< subkattis
-		<< ".kattis.com/download/sampledata?id="
-		<< id;
-
-	}
+	ss
+	<< "https://"
+	<< subkattis
+	<< ".kattis.com/problems/"
+	<< id
+	<< "/file/statement/samples.zip";
 
 	url = ss.str ( );
 	ss.str ("");
@@ -181,7 +169,7 @@ void getSampleData ( ) {
 	<< kattisDir
 	<< "/"
 	<< id
-	<< "/sampledata.zip";
+	<< "/sampledata.zip --no-check-certificate";
 
 	#endif
 
